@@ -24,6 +24,19 @@
 require_once 'connect-db.php';
 
 /**
+ * Obtenir la liste de tous les continents
+ *
+ * @return array tableau de noms de continents
+ */
+function getContinents()
+{
+    global $pdo;
+    $query = 'SELECT DISTINCT Continent FROM Country;';
+    $result = $pdo->query($query);
+    return $result->fetchAll(PDO::FETCH_COLUMN);
+}
+
+/**
  * Obtenir la liste de tous les pays référencés d'un continent donné
  *
  * @param string $continent le nom d'un continent

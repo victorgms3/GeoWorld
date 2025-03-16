@@ -11,6 +11,8 @@
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link      https://github.com/sio-melun/geoworld
  */
+require_once 'inc/manager-db.php';
+$continents = getContinents();
 ?><!doctype html>
 <html lang="fr" class="h-100">
 <head>
@@ -51,21 +53,13 @@
         <li class="nav-item active">
           <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-             aria-expanded="false">Dropdown</a>
+             aria-expanded="false">Continents</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#" method="get">Asie </a>
-            <a class="dropdown-item" href="#">Europe</a>
-            <a class="dropdown-item" href="#">Amerique Nord</a>
-            <a class="dropdown-item" href="#">Amerique Sud</a>
-            <a class="dropdown-item" href="#">Afrique</a>
+            <?php foreach ($continents as $continent) : ?>
+              <a class="dropdown-item" href="index2.php?continent=<?php echo urlencode($continent); ?>"><?php echo htmlspecialchars($continent); ?></a>
+            <?php endforeach; ?>
           </div>
         </li>
       </ul>

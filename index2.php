@@ -16,14 +16,14 @@
 <?php  require_once 'header.php'; ?>
 <?php
 require_once 'inc/manager-db.php';
-$continent = 'Asia';
+$continent = isset($_GET['continent']) ? $_GET['continent'] : 'Asia';
 $desPays = getCountriesByContinent($continent);
 ?>
 
 <main role="main" class="flex-shrink-0">
 
   <div class="container">
-    <h1>Les pays en Asie</h1>
+    <h1>Les pays en <?php echo $continent; ?> </h1> // a verifier
     <div>
      <table class="table">
          <tr>
