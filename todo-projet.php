@@ -2,7 +2,7 @@
 /**
  * Présentation du projet
  *
- * PHP version 7
+ * PHP version 7.0
  *
  * @category  Projet_Presentation
  * @package   Application
