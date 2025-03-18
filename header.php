@@ -13,6 +13,7 @@
  */
 require_once 'inc/manager-db.php';
 $continents = getContinents();
+$lesPays = getAllCountries();
 ?><!doctype html>
 <html lang="fr" class="h-100">
 <head>
@@ -34,6 +35,10 @@ $continents = getContinents();
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+      .dropdown-menu{
+    max-height: 400px;
+    overflow-y: auto;
+    }
     }
   </style>
   <!-- Custom styles for this template -->
@@ -50,11 +55,19 @@ $continents = getContinents();
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-        </li>
+
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+             aria-expanded="false">Pays</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <?php foreach($lesPays as $pays) : ?>
+                <a class="dropdown-item" href="detailPays.php?id=<?= $pays->id ; ?>"><?= $pays->Name; ?> </a>
+                <?php endforeach ; ?>
+              </div>
+          </li>
+        
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">Continents</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <?php foreach ($continents as $continent) : ?>
@@ -62,6 +75,7 @@ $continents = getContinents();
             <?php endforeach; ?>
           </div>
         </li>
+
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">

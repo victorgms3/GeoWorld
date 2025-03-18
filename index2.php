@@ -23,15 +23,20 @@ $desPays = getCountriesByContinent($continent);
 <main role="main" class="flex-shrink-0">
 
   <div class="container">
-    <h1>Les pays en <?php echo $continent; ?> </h1> // a verifier
+    <h1>Les pays en <?php echo $continent; ?> </h1>
     <div>
-     <table class="table">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
          <tr>
            <th>Nom</th>
            <th>Population</th>
            <th>Region</th>
+           <th>Capitale</th>
          </tr>
+</thead>
+<tbody>
        <?php
+       
        // $desPays est un tableau dont les éléments sont des objets représentant
        // des caractéristiques d'un pays (en relation avec les colonnes de la table Country)
        foreach ($desPays as $pays) :?>
@@ -39,10 +44,12 @@ $desPays = getCountriesByContinent($continent);
             <td> <?php echo $pays->Name ?></td>
             <td> <?php echo $pays->Population ?></td>
             <td> <?php echo $pays->Region ?></td>
+            <td> <?php echo getCapitale($pays->Capital)->Name?></td>
           </tr>
           <?php
             endforeach
           ?>
+          </tbody>
      </table>
     </div>
     <p>
