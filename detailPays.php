@@ -20,8 +20,12 @@ if (isset($_GET['id']) && !empty($_GET['id']) ){
 </head>
 <body>
     <div class="container">
-        <?php  $drapeau = strtolower($pays["Code2"]); ?>
-        <h1><?php echo $pays["Name"]; ?> <img src="images/drapeau/<?php echo $drapeau; ?>.png" alt="Drapeau de <?php echo $pays["Name"]; ?>"></h1>
+        <?php  $drapeau = strtolower($pays["Code2"]); 
+        $source = "images/flag/$drapeau.png";
+        if (!file_exists($source)) {
+            $source = "images/flag/us.png";
+        }?>
+        <h1><?php echo $pays["Name"]; ?> <img src=<?php echo $source; ?>alt="Drapeau de <?php echo $pays["Name"]; ?>"></h1>
         <table>
             <tr>
                 <th>Code</th>
@@ -36,10 +40,9 @@ if (isset($_GET['id']) && !empty($_GET['id']) ){
                 <td><?php echo $capital->Name;?></td>
                 <td><?php echo $pays["Population"]?></td>
                 <td><?php echo $pays["SurfaceArea"]?></td>
-                <!-- test -->
             </tr>
         </table>
-        <button>Voir les villes</button>
+        <button href ="">Voir les villes</button>
         <div class="details">
             <div class="langues">
                 <h2>Langues parlées</h2>

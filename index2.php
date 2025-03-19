@@ -28,6 +28,7 @@ $desPays = getCountriesByContinent($continent);
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
          <tr>
+           <th>Drapeau</th>
            <th>Nom</th>
            <th>Population</th>
            <th>Region</th>
@@ -41,10 +42,18 @@ $desPays = getCountriesByContinent($continent);
        // des caractéristiques d'un pays (en relation avec les colonnes de la table Country)
        foreach ($desPays as $pays) :?>
           <tr>
+            <td> <?php $drapeau = strtolower($pays->Code2);
+            $source = "images/flag/$drapeau.png";
+            if (!file_exists($source)) {
+              $source = "images/flag/us.png";
+            }?>          
+            <img src="<?php echo $source; ?>" alt="Drapeau de <?php echo $pays->Name; ?>">
+            </td>
             <td> <?php echo $pays->Name ?></td>
             <td> <?php echo $pays->Population ?></td>
             <td> <?php echo $pays->Region ?></td>
-            <td> <?php echo getCapitale($pays->Capital)->Name?></td>
+            <td> <?php if (getCapitale($pays->Capital) == Null) echo "No capitale";
+             else echo getCapitale($pays->Capital)->Name?></td>
           </tr>
           <?php
             endforeach
@@ -55,7 +64,7 @@ $desPays = getCountriesByContinent($continent);
     <p>
         <code>
       <?php
-        var_dump($desPays[0]);
+        // var_dump($desPays[0]);
         ?>
         </code>
     </p>
