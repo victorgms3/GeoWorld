@@ -36,6 +36,7 @@ if (isset($_GET['id']) && !empty($_GET['id']) ){
                 <td><?php echo $capital->Name;?></td>
                 <td><?php echo $pays["Population"]?></td>
                 <td><?php echo $pays["SurfaceArea"]?></td>
+                <!-- test -->
             </tr>
         </table>
         <button>Voir les villes</button>
