@@ -45,7 +45,7 @@ $desPays = getCountriesByContinent($continent);
             <td> <?php $drapeau = strtolower($pays->Code2);
             $source = "images/flag/$drapeau.png";
             if (!file_exists($source)) {
-              $source = "images/flag/us.png";
+              $source = "images/flag/onu.png";
             }?>          
             <img src="<?php echo $source; ?>" alt="Drapeau de <?php echo $pays->Name; ?>">
             </td>
