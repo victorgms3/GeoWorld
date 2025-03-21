@@ -1,0 +1,132 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+img{
+    width: 70px;;
+    height: 44px;;
+}
+
+/* Style pour le titre principal */
+.centrer {
+    text-align: center;
+}
+
+/* Style pour le tableau principal */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td, table tr {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Style pour le bouton "Voir les villes" */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour les sections de détails */
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.details > div {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.details h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details th, .details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.details th {
+    background-color: #f2f2f2;
+}
+
+/* Style pour le formulaire de données actualisées */
+.actualisees form {
+    display: flex;
+    flex-direction: column;
+}
+
+.actualisees label {
+    margin-bottom: 5px;
+}
+
+.actualisees input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.actualisees button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.actualisees button:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour les boutons supplémentaires */
+.actualisees .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.actualisees .button-group button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.actualisees .button-group button:hover {
+    background-color: #0056b3;
+}

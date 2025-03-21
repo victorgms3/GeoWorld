@@ -18,6 +18,7 @@ $langues = getPercentLanguage($idPays);
     <meta charset="UTF-8">
     <title>Détails du Pays <?php echo $pays["Name"] ?></title>
     <link href="css/custom.css" rel="stylesheet">
+    <link href="detailPays.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -26,7 +27,7 @@ $langues = getPercentLanguage($idPays);
         if (!file_exists($source)) {
             $source = "images/flag/us.png";
         }?>
-        <h1><?php echo $pays["Name"]; ?> <img src=<?php echo $source;?> alt="Drapeau de <?php echo $pays["Name"]; ?>"></h1>
+        <h1 class = "centrer"><?php echo $pays["Name"]; ?> <img src=<?php echo $source;?> alt="Drapeau de <?php echo $pays["Name"]; ?>"></h1>
         <table>
             <tr>
                 <th>Code</th>
@@ -47,7 +48,7 @@ $langues = getPercentLanguage($idPays);
         <div class="details">
             <div class="langues">
                 <h2>Langues parlées</h2>
-                <table>
+                <table >
                     <tr>
                         <th>Nom</th>
                         <th>Pourcentage</th>
@@ -65,19 +66,19 @@ $langues = getPercentLanguage($idPays);
                 <table>
                     <tr>
                         <td>Population</td>
-                        <td>59,225,700</td>
+                        <td><?php echo $pays["Population"]?> </td>
                     </tr>
                     <tr>
                         <td>PNB</td>
-                        <td>1,424,285.00</td>
+                        <td><?php echo $pays["GNP"]?></td>
                     </tr>
                     <tr>
                         <td>Chef d'état</td>
-                        <td>Jacques Chirac</td>
+                        <td><?php echo $pays["HeadOfState"]?></td>
                     </tr>
                     <tr>
                         <td>Espérance de vie</td>
-                        <td>78.8</td>
+                        <td><?php echo $pays["LifeExpectancy"]?></td>
                     </tr>
                 </table>
             </div>
@@ -103,14 +104,11 @@ $langues = getPercentLanguage($idPays);
         </div>
     </div>
 
-<?php require_once "javascripts.php" ?>
+<?php require_once "javascripts.php";
+require_once "footer.php"
+?>
 
-<hr />
-<footer class="footer mt-auto py-3">
-  <div class="container">
-    <span class="text-muted">&copy;2023-2024 SIO SLAM MyWebApp</span>
-  </div>
-</footer>
+
 
 </body>
 </html>
