@@ -9,6 +9,7 @@ if (isset($_GET['id']) && !empty($_GET['id']) ){
   else{
     echo "Nul";
   }
+$langues = getPercentLanguage($idPays);
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ if (isset($_GET['id']) && !empty($_GET['id']) ){
         if (!file_exists($source)) {
             $source = "images/flag/us.png";
         }?>
-        <h1><?php echo $pays["Name"]; ?> <img src=<?php echo $source; ?>alt="Drapeau de <?php echo $pays["Name"]; ?>"></h1>
+        <h1><?php echo $pays["Name"]; ?> <img src=<?php echo $source;?> alt="Drapeau de <?php echo $pays["Name"]; ?>"></h1>
         <table>
             <tr>
                 <th>Code</th>
@@ -51,30 +52,12 @@ if (isset($_GET['id']) && !empty($_GET['id']) ){
                         <th>Nom</th>
                         <th>Pourcentage</th>
                     </tr>
+                    <?php foreach ($langues as $test):?>
                     <tr>
-                        <td>French</td>
-                        <td>93.6</td>
+                        <td><?php echo $test->Name?></td>
+                        <td><?php echo $test->Percentage?></td>
                     </tr>
-                    <tr>
-                        <td>Arabic</td>
-                        <td>2.5</td>
-                    </tr>
-                    <tr>
-                        <td>Portuguese</td>
-                        <td>1.2</td>
-                    </tr>
-                    <tr>
-                        <td>Spanish</td>
-                        <td>0.4</td>
-                    </tr>
-                    <tr>
-                        <td>Italian</td>
-                        <td>0.4</td>
-                    </tr>
-                    <tr>
-                        <td>Turkish</td>
-                        <td>0.4</td>
-                    </tr>
+                    <?php endforeach; ?>
                 </table>
             </div>
             <div class="economiques">

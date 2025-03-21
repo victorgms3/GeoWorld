@@ -49,7 +49,7 @@ $desPays = getCountriesByContinent($continent);
             }?>          
             <img src="<?php echo $source; ?>" alt="Drapeau de <?php echo $pays->Name; ?>">
             </td>
-            <td> <?php echo $pays->Name ?></td>
+            <td> <a href="detailPays.php?id=<?php echo $pays->id ?>"><?php echo $pays->Name ?></a></td>
             <td> <?php echo $pays->Population ?></td>
             <td> <?php echo $pays->Region ?></td>
             <td> <?php if (getCapitale($pays->Capital) == Null) echo "No capitale";

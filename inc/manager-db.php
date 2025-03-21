@@ -90,3 +90,13 @@ function getDetailsPays($id) {
     $prep->execute();
     return $prep->fetch(PDO::FETCH_ASSOC);
 }
+function getPercentLanguage($idPays)  {
+    //On recupère les diffèrentes pourcentages de langue parle dans un pays 
+    global $pdo;
+    $query = 'SELECT Percentage, Name FROM `CountryLanguage`,`Language` WHERE CountryLanguage.idLanguage = Language.id  AND idCountry = :id ORDER BY Percentage DESC ;';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id', $idPays, PDO::PARAM_INT);
+    $prep->execute();
+    return $prep->fetchAll();
+}
+
