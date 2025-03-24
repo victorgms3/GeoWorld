@@ -99,4 +99,12 @@ function getPercentLanguage($idPays)  {
     $prep->execute();
     return $prep->fetchAll();
 }
+function getCity($idPays){
+    global $pdo;
+    $query = 'SELECT Name, District,Population  FROM `City` WHERE idCountry = :id ORDER BY Population DESC;';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id', $idPays, PDO::PARAM_INT);
+    $prep->execute();
+    return $prep->fetchAll();
+}
 
