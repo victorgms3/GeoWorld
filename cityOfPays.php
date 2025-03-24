@@ -24,7 +24,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <h1 class = "centrer">Villes</h1>
         <h1 class = "centrer">..........</h1>
         <div>
-          <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th>Nom</th>

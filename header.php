@@ -20,7 +20,7 @@ $lesPays = getAllCountries();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>Homepage : GeoWorld</title>
+  <title> <a href="accueil.php">Homepage : GeoWorld</a></title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">

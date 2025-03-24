@@ -130,3 +130,7 @@ button:hover {
 .actualisees .button-group button:hover {
     background-color: #0056b3;
 }
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #000; /* Changez la couleur de la bordure ici */
+}
