@@ -107,4 +107,41 @@ function getCity($idPays){
     $prep->execute();
     return $prep->fetchAll();
 }
+function ajouterInformation($idPays, $population, $pnb, $chefEtat, $esperanceDeVie) {
+    global $pdo;
+    $population = (int) $population;
+    $requete = "UPDATE Country SET Population = :population, GNP = :pnb, HeadOfState = :chefEtat, LifeExpectancy = :esperance WHERE id = :id";
+    try {
+        $prep = $pdo->prepare($requete);
+        $prep->bindValue(':population', $population, PDO::PARAM_INT);
+        $prep->bindValue(':pnb', $pnb, PDO::PARAM_STR);
+        $prep->bindValue(':chefEtat', $chefEtat, PDO::PARAM_STR);
+        $prep->bindValue(':esperance', $esperanceDeVie, PDO::PARAM_STR);
+        $prep->bindValue(':id', $idPays, PDO::PARAM_INT);
+        $prep->execute();
+    } catch (Exception $e) {
+        die("Erreur dans la requête : " . $e->getMessage());
+    }
+}
 
+// function getWikipediaData($nomPays) {
+//     $url = "https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&titles=$nomPays&format=json&exintro=1";
+//     $response = @file_get_contents($url);
+//     if ($response === FALSE) {
+//         return null;
+//     }
+//     $data = json_decode($response, true);
+//     if (isset($data['query']['pages'])) {
+//         $pages = $data['query']['pages'];
+//         foreach ($pages as $page) {
+//             if (isset($page['extract'])) {
+//                 return $page['extract']; // Retourner l'extrait
+//             }
+//         }
+//     }
+
+//     return null; // Retourner null si aucune donnée n'est trouvée
+// }
+    
+
+    // A verifier pour mettre a jour les données grace a wikipedia

@@ -20,7 +20,7 @@ $lesPays = getAllCountries();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title> <a href="accueil.php">Homepage : GeoWorld</a></title>
+  <title> Homepage : GeoWorld</a></title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,6 +52,11 @@ $lesPays = getAllCountries();
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+        <a class="navbar-brand" href="mapWorld.php">Map</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
@@ -75,7 +80,7 @@ $lesPays = getAllCountries();
             <?php endforeach; ?>
           </div>
         </li>
-
+        
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">

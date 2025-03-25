@@ -21,8 +21,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 <body>
 <main role="main" class="flex-shrink-0">
     <div class="container">
-    <h1 class = "centrer">Villes</h1>
-        <h1 class = "centrer">..........</h1>
+    <h1 class = "text-center">Villes</h1>
+        <h1 class = "text-center">..........</h1>
         <div>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>

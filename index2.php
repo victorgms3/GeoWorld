@@ -44,7 +44,7 @@ $desPays = getCountriesByContinent($continent);
                   if (!file_exists($source)) {
                     $source = "images/flag/onu.png";
                   }?>          
-                  <img src="<?php echo $source; ?>" alt="Drapeau de <?php echo $pays->Name; ?>">
+                  <img src="<?php echo $source; ?>" alt="Drapeau de <?php echo $pays->Name; ?>" height= "45" width ="60">
                 </td>
                 <td> 
                   <a href="detailPays.php?id=<?php echo $pays->id ?>"><?php echo $pays->Name ?></a></td>
