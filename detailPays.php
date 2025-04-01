@@ -57,14 +57,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
                 <th>Capitale</th>
                 <th>Population</th>
                 <th>Superficie</th>
+                <th>PIB</th>
             </tr>
             <tr>
-                <td><?php echo $pays->Code?></td>
-                <td><?php echo $pays->Continent?></td>
-                <td><?php if ($capital == Null) echo "No capitale";
-                    else echo $capital->Name?></td>
-                <td><?php echo $pays->Population?></td>
-                <td><?php echo $pays->SurfaceArea?></td>
+                <td>
+                    <?php echo $pays->Code?>
+                </td>
+                <td>
+                    <?php echo $pays->Continent?>
+                </td>
+                <td>
+                    <?php if ($capital == Null) echo "No capitale";
+                    else echo $capital->Name?>
+                    </td>
+                <td>
+                    <?php echo $pays->Population?>
+                </td>
+                <td>
+                    <?php echo $pays->SurfaceArea?>
+                </td>
+                <td> 
+                  <?php echo $pays->GNP ?></a>
+                </td>
             </tr>
         </table>
         <button class="btndetailPays" onclick="window.location.href='cityOfPays.php?id=<?php echo $idPays?>';">Voir les villes</button>

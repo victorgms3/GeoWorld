@@ -112,8 +112,7 @@ function getPercentLanguage($idPays)  {
     $prep = $pdo->prepare($query);
     $prep->bindValue(':id', $idPays, PDO::PARAM_INT);
     $prep->execute();
-    return $prep
-    ->fetchAll();
+    return $prep->fetchAll();
 }
 function getCity($idPays){
     global $pdo;

@@ -48,11 +48,12 @@ $desPays = getCountriesByContinent($continent);
                 </td>
                 <td> 
                   <a href="detailPays.php?id=<?php echo $pays->id ?>"><?php echo $pays->Name ?></a></td>
-            <td> <?php echo $pays->Population ?></td>
-            <td> <?php echo $pays->Region ?></td>
-            <td> <?php if (getCapitale($pays->Capital) == Null) echo "No capitale";
-             else echo getCapitale($pays->Capital)->Name?></td>
-          </tr>
+
+                <td> <?php echo $pays->Population ?></td>
+                <td> <?php echo $pays->Region ?></td>
+                <td> <?php if (getCapitale($pays->Capital) == Null) echo "No capitale";
+                else echo getCapitale($pays->Capital)->Name?></td>
+            </tr>
           <?php
             endforeach
           ?>
