@@ -21,6 +21,7 @@
  *  Les fonctions dépendent d'une connection à la base de données,
  *  cette fonction est déportée dans un autre script.
  */
+
 require_once 'connect-db.php';
 
 /**
@@ -28,6 +29,7 @@ require_once 'connect-db.php';
  *
  * @return array tableau de noms de continents
  */
+
 function getContinents()
 {
     global $pdo;
@@ -43,6 +45,7 @@ function getContinents()
  * 
  * @return array tableau d'objets (des pays)
  */
+
 function getCountriesByContinent($continent)
 {
     // pour utiliser la variable globale dans la fonction
@@ -67,17 +70,28 @@ function getCountriesByContinent($continent)
  *
  * @return liste d'objets
  */
+
 function getAllCountries()
 {
     global $pdo;
     $query = 'SELECT * FROM Country;';
     return $pdo->query($query)->fetchAll();
 }
+
 function getCapitale($countryId){
     global $pdo;
     $query = 'SELECT Name FROM City WHERE id = :id;';
     $prep = $pdo->prepare($query);
     $prep->bindValue(':id', $countryId, PDO::PARAM_INT);
+    $prep->execute();
+    return $prep->fetch();
+}
+
+function getPays($id)  {
+    global $pdo;
+    $query = 'SELECT Name FROM `Country` WHERE Country = :id;';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id', $idPays, PDO::PARAM_INT);
     $prep->execute();
     return $prep->fetch();
 }
@@ -88,8 +102,9 @@ function getDetailsPays($id) {
     $prep = $pdo->prepare($query);
     $prep->bindValue(':id', $id, PDO::PARAM_INT);
     $prep->execute();
-    return $prep->fetch(PDO::FETCH_ASSOC);
+    return $prep->fetch();
 }
+
 function getPercentLanguage($idPays)  {
     //On recupère les diffèrentes pourcentages de langue parle dans un pays 
     global $pdo;
@@ -97,7 +112,8 @@ function getPercentLanguage($idPays)  {
     $prep = $pdo->prepare($query);
     $prep->bindValue(':id', $idPays, PDO::PARAM_INT);
     $prep->execute();
-    return $prep->fetchAll();
+    return $prep
+    ->fetchAll();
 }
 function getCity($idPays){
     global $pdo;
@@ -107,6 +123,7 @@ function getCity($idPays){
     $prep->execute();
     return $prep->fetchAll();
 }
+
 function ajouterInformation($idPays, $population, $pnb, $chefEtat, $esperanceDeVie) {
     global $pdo;
     $population = (int) $population;
@@ -123,6 +140,26 @@ function ajouterInformation($idPays, $population, $pnb, $chefEtat, $esperanceDeV
         die("Erreur dans la requête : " . $e->getMessage());
     }
 }
+
+function getPaysByName($name)  {
+    global $pdo;
+    $query = 'SELECT * FROM Country WHERE Name = :name;';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':name', $name, PDO::PARAM_STR);
+    $prep->execute();
+    return $prep->fetch();
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // function getWikipediaData($nomPays) {
 //     $url = "https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&titles=$nomPays&format=json&exintro=1";
