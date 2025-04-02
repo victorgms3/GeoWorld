@@ -1,4 +1,16 @@
 <?php
+/**
+ * All cities for a country
+ *
+ * PHP version 7
+ *
+ * @category  Page_Fragment
+ * @package   Application
+ * @author    SKEEZ
+ * @copyright 2025
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link      https://github.com/victorgms3/GeoWorld
+ */
 require_once "header.php";
 require_once 'inc/manager-db.php';
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -21,8 +33,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 <body>
 <main role="main" class="flex-shrink-0">
     <div class="container">
+        <br>
     <h1 class = "text-center">Villes</h1>
-        <h1 class = "text-center">..........</h1>
+        <!-- <h1 class = "text-center">-------</h1> -->
+         <br>
         <div>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>

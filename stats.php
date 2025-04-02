@@ -1,4 +1,17 @@
-<?php require_once 'header.php'; 
+<?php 
+/**
+ * on progress...
+ *
+ * PHP version 7
+ *
+ * @category  Page_Fragment
+ * @package   Application
+ * @author    SKEEZ
+ * @copyright 2025
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link      https://github.com/victorgms3/GeoWorld
+ */
+require_once 'header.php'; 
 require_once 'inc/manager-db.php';
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $idPays = $_GET['id'];

@@ -71,8 +71,7 @@ function getCountriesByContinent($continent)
  * @return liste d'objets
  */
 
-function getAllCountries()
-{
+function getAllCountries(){
     global $pdo;
     $query = 'SELECT * FROM Country;';
     return $pdo->query($query)->fetchAll();

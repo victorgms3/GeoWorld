@@ -6,10 +6,10 @@
  *
  * @category  Connexion_DB
  * @package   Application
- * @author    SIO-SLAM <sio@ldv-melun.org>
- * @copyright 2019-2021 SIO-SLAM
+ * @author    SKEEZ
+ * @copyright skeez4408
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link      https://github.com/sio-melun/geoworld
+ * @link      https://github.com/victorgms3/GeoWorld
  */
 
 

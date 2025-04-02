@@ -1,4 +1,19 @@
-<?php require_once 'header.php'; ?>
+<?php
+/**
+ * World Map clickable
+ *
+ * PHP version 7
+ *
+ * @category  Page_Fragment
+ * @package   Application
+ * @author    SKEEZ
+ * @copyright 2025
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link      https://github.com/victorgms3/GeoWorld
+ */
+
+ require_once 'header.php'; 
+ ?>
 
 		
 

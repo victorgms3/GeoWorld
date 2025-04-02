@@ -6,21 +6,24 @@
  *
  * @category  Page_Fragment
  * @package   Application
- * @author    SIO-SLAM <sio@ldv-melun.org>
- * @copyright 2019-2021 SIO-SLAM
+ * @author    SKEEZ
+ * @copyright 2025
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link      https://github.com/sio-melun/geoworld
+ * @link      https://github.com/victorgms3/GeoWorld
  */
+
 require_once 'inc/manager-db.php';
 $continents = getContinents();
 $lesPays = getAllCountries();
-?><!doctype html>
+?>
+
+<!doctype html>
 <html lang="fr" class="h-100">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title> Homepage : GeoWorld</a></title>
+  <title> Homepage : GeoWorld</title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +50,7 @@ $lesPays = getAllCountries();
 <body class="d-flex flex-column h-100">
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="index.php">GeoWorld</a>
+    <a class="navbar-brand" href="index2.php">GeoWorld</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -76,7 +79,7 @@ $lesPays = getAllCountries();
              aria-expanded="false">Continents</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <?php foreach ($continents as $continent) : ?>
-              <a class="dropdown-item" href="index2.php?continent=<?php echo urlencode($continent); ?>"><?php echo htmlspecialchars($continent); ?></a>
+              <a class="dropdown-item" href="index2.php?continent=<?php echo $continent; ?>"><?php echo $continent; ?></a>
             <?php endforeach; ?>
           </div>
         </li>

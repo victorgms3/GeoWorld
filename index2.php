@@ -1,17 +1,16 @@
 <?php
 /**
- * Home Page
+ * All country for a continent
  *
  * PHP version 7
  *
- * @category  Page
+ * @category  Page_Fragment
  * @package   Application
- * @author    SIO-SLAM <sio@ldv-melun.org>
- * @copyright 2019-2021 SIO-SLAM
+ * @author    SKEEZ
+ * @copyright 2025
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link      https://github.com/sio-melun/geoworld
+ * @link      https://github.com/victorgms3/GeoWorld
  */
-
 ?>
 <?php  require_once 'header.php'; ?>
 <?php
@@ -31,8 +30,9 @@ $desPays = getCountriesByContinent($continent);
            <th>Drapeau</th>
            <th>Nom</th>
            <th>Population</th>
-           <th>Region</th>
+           <th>Region</th>  
            <th>Capitale</th>
+           <th>PIB</th>
          </tr>
         </thead>
         <tbody>
@@ -53,6 +53,8 @@ $desPays = getCountriesByContinent($continent);
                 <td> <?php echo $pays->Region ?></td>
                 <td> <?php if (getCapitale($pays->Capital) == Null) echo "No capitale";
                 else echo getCapitale($pays->Capital)->Name?></td>
+                <td> 
+                <?php echo $pays->GNP ?></a> </td>
             </tr>
           <?php
             endforeach

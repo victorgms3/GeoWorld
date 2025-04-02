@@ -1,4 +1,18 @@
-<?php require_once 'header.php'; 
+<?php 
+/**
+ * details for a country 
+ *
+ * PHP version 7
+ *
+ * @category  Page_Fragment
+ * @package   Application
+ * @author    SKEEZ
+ * @copyright 2025
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link      https://github.com/victorgms3/GeoWorld
+ */
+
+require_once 'header.php'; 
 require_once 'inc/manager-db.php';
 
 if (isset($_GET['name']) && !empty($_GET['name'])) {
@@ -77,7 +91,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
                     <?php echo $pays->SurfaceArea?>
                 </td>
                 <td> 
-                  <?php echo $pays->GNP ?></a>
+                  <?php $pibParHab =round((($pays->GNP/$pays->Population)*(10**6)),2);
+                  echo $pibParHab ?></a>
                 </td>
             </tr>
         </table>
